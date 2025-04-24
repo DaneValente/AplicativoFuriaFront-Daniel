@@ -4,58 +4,58 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 20 14.3% 4.1%;
-    --muted: 60 4.8% 95.9%;
-    --muted-foreground: 25 5.3% 44.7%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 20 14.3% 4.1%;
-    --card: 0 0% 100%;
-    --card-foreground: 20 14.3% 4.1%;
-    --border: 20 5.9% 90%;
-    --input: 20 5.9% 90%;
-    --primary: 207 90% 54%;
-    --primary-foreground: 211 100% 99%;
-    --secondary: 60 4.8% 95.9%;
-    --secondary-foreground: 24 9.8% 10%;
-    --accent: 60 4.8% 95.9%;
-    --accent-foreground: 24 9.8% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 60 9.1% 97.8%;
-    --ring: 20 14.3% 4.1%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 80%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 0 0% 30%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 0% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 0 0% 50%;
     --radius: 0.5rem;
     
     /* E-sports Fan Score custom colors */
-    --game-dark: 0 0% 7%;
-    --card-dark: 0 0% 12%;
+    --game-dark: 0 0% 3%;
+    --card-dark: 0 0% 7%;
     --twitter-blue: 204 88% 53%;
-    --tier-gold: 51 100% 50%;
-    --tier-orange: 16 100% 50%;
-    --tier-purple: 277 82% 53%;
-    --tier-blue: 204 70% 53%;
-    --neon-green: 108 100% 54%;
+    --tier-gold: 0 0% 90%;
+    --tier-orange: 0 0% 80%;
+    --tier-purple: 0 0% 70%;
+    --tier-blue: 0 0% 60%;
+    --neon-white: 0 0% 100%;
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --primary: 207 90% 54%;
-    --primary-foreground: 211 100% 99%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --ring: 240 4.9% 83.9%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 80%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 0 0% 30%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 0% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 0 0% 50%;
     --radius: 0.5rem;
   }
 }
@@ -69,8 +69,8 @@
     @apply font-rajdhani antialiased bg-background text-foreground;
     background-color: hsl(var(--game-dark));
     background-image: 
-      radial-gradient(circle at 10% 20%, rgba(100, 43, 115, 0.1) 0%, rgba(4, 0, 4, 0.1) 90%),
-      linear-gradient(135deg, rgba(0, 36, 61, 0.3) 0%, rgba(0, 0, 0, 0.2) 100%);
+      radial-gradient(circle at 10% 20%, rgba(255, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 90%),
+      linear-gradient(135deg, rgba(40, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
     background-attachment: fixed;
   }
 }

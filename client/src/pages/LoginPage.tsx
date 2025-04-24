@@ -21,7 +21,7 @@ export default function LoginPage() {
         <Card className="bg-[#1E1E1E] p-8 rounded-xl border border-gray-700 shadow-lg clip-path-angled">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold font-russo mb-2">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#8A2BE2] to-[#3498DB]">E-SPORTS</span> 
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">E-SPORTS</span> 
               <span className="text-white">FAN HUB</span>
             </h1>
             <p className="text-gray-400 font-inter">Conecte-se. Pontue. Ganhe.</p>
@@ -47,7 +47,7 @@ export default function LoginPage() {
             
             <Button 
               onClick={handleDemoLogin}
-              className="w-full bg-gradient-to-r from-[#8A2BE2] to-[#3498DB] hover:from-[#7B27CE] hover:to-[#2980B9] text-white font-bold py-6 px-4 rounded-md transition duration-300 flex items-center justify-center gap-3 h-auto"
+              className="w-full bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 text-white font-bold py-6 px-4 rounded-md transition duration-300 flex items-center justify-center gap-3 h-auto"
             >
               <i className="fas fa-user-alt text-xl"></i>
               <span>MODO DEMONSTRAÇÃO</span>
@@ -56,11 +56,11 @@ export default function LoginPage() {
             <div className="text-center text-sm text-gray-500 font-inter">
               <p>
                 Ao continuar, você concorda com nossos{" "}
-                <a href="#" className="text-[#3498DB] hover:underline">
+                <a href="#" className="text-red-500 hover:underline">
                   Termos de Serviço
                 </a>{" "}
                 e{" "}
-                <a href="#" className="text-[#3498DB] hover:underline">
+                <a href="#" className="text-red-500 hover:underline">
                   Política de Privacidade
                 </a>
                 .
@@ -68,17 +68,7 @@ export default function LoginPage() {
             </div>
           </div>
           
-          <div className="mt-10 flex items-center justify-center gap-4">
-            <div className="h-16 w-16 rounded-full bg-gradient-to-r from-[#FFD700] to-[#FF4500] flex items-center justify-center">
-              <i className="fas fa-trophy text-xl"></i>
-            </div>
-            <div className="h-16 w-16 rounded-full bg-gradient-to-r from-[#8A2BE2] to-[#3498DB] flex items-center justify-center">
-              <i className="fas fa-gamepad text-xl"></i>
-            </div>
-            <div className="h-16 w-16 rounded-full bg-gradient-to-r from-[#3498DB] to-[#39FF14] flex items-center justify-center">
-              <i className="fas fa-rocket text-xl"></i>
-            </div>
-          </div>
+
         </Card>
       </div>
     </div>
