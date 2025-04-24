@@ -1,4 +1,4 @@
-import type { Express, Request, Response } from "express";
+import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { 
@@ -9,7 +9,7 @@ import {
 import session from "express-session";
 import MemoryStore from "memorystore";
 import passport from "passport";
-import { Strategy as TwitterStrategy } from "passport-twitter";
+import { Strategy as TwitterStrategy, Profile } from "passport-twitter";
 
 // For demonstration, generate a random score for new users
 function generateRandomFanScore(userId: number) {
@@ -64,7 +64,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
           callbackURL: "/api/auth/twitter/callback",
         },
-        async (token, tokenSecret, profile, done) => {
+        async (token: string, tokenSecret: string, profile: Profile, done: any) => {
           try {
             // Check if user exists
             let user = await storage.getUserByTwitterId(profile.id);
@@ -127,6 +127,41 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json({ isAuthenticated: true, user: req.user });
     } else {
       res.json({ isAuthenticated: false });
+    }
+  });
+  
+  // Demo login route (for testing without Twitter API keys)
+  app.get("/api/auth/demo-login", async (req, res) => {
+    try {
+      // Create a demo user if it doesn't exist
+      let demoUser = await storage.getUserByUsername("demouser");
+      
+      if (!demoUser) {
+        demoUser = await storage.createUser({
+          username: "demouser",
+          password: "demopassword",
+          twitterId: "123456789",
+          twitterUsername: "demouser",
+          displayName: "Usuário Demo",
+          profileImageUrl: "https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png",
+          accessToken: "",
+          accessTokenSecret: "",
+        });
+        
+        // Create initial fan score for demo user
+        await storage.createFanScore(generateRandomFanScore(demoUser.id));
+      }
+      
+      // Log in the demo user
+      req.login(demoUser, (err) => {
+        if (err) {
+          return res.status(500).json({ error: "Falha no login demo" });
+        }
+        return res.redirect("/dashboard");
+      });
+    } catch (error) {
+      console.error("Demo login error:", error);
+      res.status(500).json({ error: "Erro no servidor" });
     }
   });
 

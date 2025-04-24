@@ -1,10 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 export default function LoginPage() {
   // Handler for Twitter login
   const handleTwitterLogin = () => {
     window.location.href = "/api/auth/twitter";
+  };
+
+  // Handler for demo login
+  const handleDemoLogin = () => {
+    window.location.href = "/api/auth/demo-login";
   };
 
   return (
@@ -28,6 +34,23 @@ export default function LoginPage() {
             >
               <i className="fab fa-twitter text-xl"></i>
               <span>ENTRAR COM TWITTER</span>
+            </Button>
+            
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <Separator className="w-full" />
+              </div>
+              <div className="relative flex justify-center text-xs">
+                <span className="bg-[#1E1E1E] px-2 text-gray-500">OU</span>
+              </div>
+            </div>
+            
+            <Button 
+              onClick={handleDemoLogin}
+              className="w-full bg-gradient-to-r from-[#8A2BE2] to-[#3498DB] hover:from-[#7B27CE] hover:to-[#2980B9] text-white font-bold py-6 px-4 rounded-md transition duration-300 flex items-center justify-center gap-3 h-auto"
+            >
+              <i className="fas fa-user-alt text-xl"></i>
+              <span>MODO DEMONSTRAÇÃO</span>
             </Button>
             
             <div className="text-center text-sm text-gray-500 font-inter">
