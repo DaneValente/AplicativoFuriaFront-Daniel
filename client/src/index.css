@@ -69,8 +69,8 @@
     @apply font-rajdhani antialiased bg-background text-foreground;
     background-color: hsl(var(--game-dark));
     background-image: 
-      radial-gradient(circle at 10% 20%, rgba(255, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 90%),
-      linear-gradient(135deg, rgba(40, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+      radial-gradient(circle at 10% 20%, rgba(50, 50, 50, 0.1) 0%, rgba(0, 0, 0, 0.1) 90%),
+      linear-gradient(135deg, rgba(30, 30, 30, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
     background-attachment: fixed;
   }
 }
