@@ -47,7 +47,7 @@ export default function FanScorePage({ user }: FanScorePageProps) {
   // Loading state
   if (isLoading || !fanScore) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#121212]">
+      <div className="min-h-screen flex items-center justify-center bg-black">
         <div className="text-white text-2xl animate-pulse">Carregando seu Fan Score...</div>
       </div>
     );
@@ -63,7 +63,7 @@ export default function FanScorePage({ user }: FanScorePageProps) {
         {/* Header Section */}
         <header className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="flex items-center gap-4 mb-4 md:mb-0">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#8A2BE2] to-[#3498DB] flex items-center justify-center">
+            <div className="w-12 h-12 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center">
               <span className="text-xl font-bold">ES</span>
             </div>
             <h1 className="text-3xl font-russo tracking-wider">E-SPORTS FAN HUB</h1>
@@ -141,7 +141,7 @@ export default function FanScorePage({ user }: FanScorePageProps) {
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mb-8">
           <Button 
-            className="flex-1 bg-gradient-to-r from-[#8A2BE2] to-[#3498DB] hover:from-[#3498DB] hover:to-[#8A2BE2] text-white font-bold py-6 px-6 rounded-md transition duration-300 flex items-center justify-center gap-2 h-auto"
+            className="flex-1 bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-900 hover:to-gray-700 text-white font-bold py-6 px-6 rounded-md transition duration-300 flex items-center justify-center gap-2 h-auto"
           >
             <i className="fas fa-compass"></i>
             <span>Ver Recomendações</span>
@@ -197,8 +197,8 @@ export default function FanScorePage({ user }: FanScorePageProps) {
           {tiers.filter(t => t.tier !== tier.tier).map((otherTier, index) => (
             <Card 
               key={index}
-              className="bg-[#1E1E1E] rounded-lg p-4"
-              style={{ borderColor: otherTier.colors.primary, borderOpacity: '0.5' }}
+              className="bg-[#1E1E1E] rounded-lg p-4 border"
+              style={{ borderColor: otherTier.colors.primary, opacity: 0.8 }}
             >
               <div className="flex items-center gap-2 mb-2">
                 <i 

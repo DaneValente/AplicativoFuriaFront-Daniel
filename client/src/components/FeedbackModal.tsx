@@ -70,19 +70,19 @@ export default function FeedbackModal({ open, onOpenChange }: FeedbackModalProps
         <div className="space-y-4 py-2">
           <RadioGroup value={selectedFeedback || ""} onValueChange={(value) => setSelectedFeedback(value as FeedbackOption)}>
             <div className="flex items-center space-x-2">
-              <RadioGroupItem value="too-low" id="too-low" className="text-purple-500" />
+              <RadioGroupItem value="too-low" id="too-low" className="text-white" />
               <Label htmlFor="too-low" className="text-sm text-gray-200">Muito baixo, mereço mais pontos</Label>
             </div>
             <div className="flex items-center space-x-2">
-              <RadioGroupItem value="accurate" id="accurate" className="text-purple-500" />
+              <RadioGroupItem value="accurate" id="accurate" className="text-white" />
               <Label htmlFor="accurate" className="text-sm text-gray-200">Está correto, reflete meu engajamento</Label>
             </div>
             <div className="flex items-center space-x-2">
-              <RadioGroupItem value="too-high" id="too-high" className="text-purple-500" />
+              <RadioGroupItem value="too-high" id="too-high" className="text-white" />
               <Label htmlFor="too-high" className="text-sm text-gray-200">Muito alto, não sou tão envolvido</Label>
             </div>
             <div className="flex items-center space-x-2">
-              <RadioGroupItem value="not-sure" id="not-sure" className="text-purple-500" />
+              <RadioGroupItem value="not-sure" id="not-sure" className="text-white" />
               <Label htmlFor="not-sure" className="text-sm text-gray-200">Não tenho certeza, como é calculado?</Label>
             </div>
           </RadioGroup>
@@ -92,7 +92,7 @@ export default function FeedbackModal({ open, onOpenChange }: FeedbackModalProps
               placeholder="Comentários adicionais (opcional)"
               value={comment}
               onChange={(e) => setComment(e.target.value)}
-              className="w-full bg-gray-800 border border-gray-700 text-white text-sm focus:ring-2 focus:ring-purple-500"
+              className="w-full bg-gray-800 border border-gray-700 text-white text-sm focus:ring-2 focus:ring-gray-500"
             />
           </div>
         </div>
@@ -106,7 +106,7 @@ export default function FeedbackModal({ open, onOpenChange }: FeedbackModalProps
           <Button 
             onClick={handleSubmit}
             disabled={isSubmitting}
-            className="bg-gradient-to-r from-[#8A2BE2] to-[#3498DB] text-white border-none hover:opacity-90"
+            className="bg-gradient-to-r from-gray-700 to-gray-900 text-white border-none hover:bg-gray-800"
           >
             {isSubmitting ? "Enviando..." : "Enviar Feedback"}
           </Button>
