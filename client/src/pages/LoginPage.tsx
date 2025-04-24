@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import FuriaLogo from "@/components/FuriaLogo";
 
 export default function LoginPage() {
   // Handler for Twitter login
@@ -20,11 +21,14 @@ export default function LoginPage() {
       <div className="z-10 w-full max-w-md">
         <Card className="bg-[#1E1E1E] p-8 rounded-xl border border-gray-700 shadow-lg clip-path-angled">
           <div className="text-center mb-8">
+            <div className="flex justify-center mb-2">
+              <FuriaLogo size="lg" />
+            </div>
             <h1 className="text-4xl font-bold font-russo mb-2">
-              <span className="text-gray-300">E-SPORTS</span> 
-              <span className="text-white">FAN HUB</span>
+              <span className="text-white">FURIA</span> 
+              <span className="text-gray-300">FAN SCORE</span>
             </h1>
-            <p className="text-gray-400 font-inter">Conecte-se. Pontue. Ganhe.</p>
+            <p className="text-gray-400 font-inter">Seja reconhecido como um verdadeiro torcedor.</p>
           </div>
           
           <div className="space-y-6">

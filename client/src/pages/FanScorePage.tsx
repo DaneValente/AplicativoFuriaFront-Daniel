@@ -6,6 +6,8 @@ import { Separator } from "@/components/ui/separator";
 import TierBadge from "@/components/TierBadge";
 import ScoreProgressBar from "@/components/ScoreProgressBar";
 import FeedbackModal from "@/components/FeedbackModal";
+import FuriaLogo from "@/components/FuriaLogo";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { 
   getUserTier, 
   formatScoreCategories, 
@@ -22,6 +24,7 @@ interface FanScorePageProps {
 export default function FanScorePage({ user }: FanScorePageProps) {
   const [feedbackModalOpen, setFeedbackModalOpen] = useState(false);
   const { toast } = useToast();
+  const isMobile = useIsMobile();
 
   // Fetch fan score data
   const { data: fanScore, isLoading, error } = useQuery<FanScoreData>({
@@ -60,13 +63,11 @@ export default function FanScorePage({ user }: FanScorePageProps) {
   return (
     <div className="min-h-screen p-4 md:p-8 text-white font-rajdhani">
       <div className="container mx-auto max-w-4xl">
-        {/* Header Section */}
-        <header className="flex flex-col md:flex-row justify-between items-center mb-8">
-          <div className="flex items-center gap-4 mb-4 md:mb-0">
-            <div className="w-12 h-12 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center">
-              <span className="text-xl font-bold">ES</span>
-            </div>
-            <h1 className="text-3xl font-russo tracking-wider">E-SPORTS FAN HUB</h1>
+        {/* Header Section - Reposicionamento do logo conforme solicitado */}
+        <header className={`flex ${isMobile ? 'flex-col' : 'flex-row'} justify-between items-center mb-8`}>
+          <div className={`flex ${isMobile ? 'flex-col' : 'flex-row'} items-center gap-4 mb-4 md:mb-0`}>
+            <FuriaLogo size="lg" className={`${isMobile ? 'mx-auto mb-2' : ''}`} />
+            <h1 className="text-3xl font-russo tracking-wider">FURIA FAN SCORE</h1>
           </div>
           
           <div className="flex items-center gap-3">
@@ -192,7 +193,7 @@ export default function FanScorePage({ user }: FanScorePageProps) {
         </div>
 
         {/* Other Tiers Preview */}
-        <h2 className="text-2xl font-bold mb-4">Outros Níveis de Fãs</h2>
+        <h2 className="text-2xl font-bold mb-4">Níveis de Torcedor FURIA</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {tiers.filter(t => t.tier !== tier.tier).map((otherTier, index) => (
             <Card 
