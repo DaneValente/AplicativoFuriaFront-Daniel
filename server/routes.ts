@@ -29,9 +29,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.use(
     session({
       secret: process.env.SESSION_SECRET || "esports-fan-hub-secret",
-      resave: false,
-      saveUninitialized: false,
-      cookie: { secure: process.env.NODE_ENV === "production", maxAge: 86400000 },
+      resave: true,
+      saveUninitialized: true,
+      cookie: { 
+        secure: false, // Set to false for development
+        maxAge: 86400000, // 24 hours
+        httpOnly: true 
+      },
       store: new MemStoreSession({
         checkPeriod: 86400000, // prune expired entries every 24h
       }),
@@ -123,6 +127,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Auth status route
   app.get("/api/auth/status", (req, res) => {
+    console.log("Auth status check - isAuthenticated:", req.isAuthenticated());
+    console.log("Session user:", req.user);
     if (req.isAuthenticated()) {
       res.json({ isAuthenticated: true, user: req.user });
     } else {
@@ -155,8 +161,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Log in the demo user
       req.login(demoUser, (err) => {
         if (err) {
+          console.error("Demo login error:", err);
           return res.status(500).json({ error: "Falha no login demo" });
         }
+        
+        console.log("Demo login successful, redirecting to dashboard");
         return res.redirect("/dashboard");
       });
     } catch (error) {
