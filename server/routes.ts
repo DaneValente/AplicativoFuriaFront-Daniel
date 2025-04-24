@@ -66,7 +66,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         {
           consumerKey: process.env.TWITTER_CONSUMER_KEY,
           consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
-          callbackURL: "/api/auth/twitter/callback",
+          callbackURL: "https://" + process.env.REPL_SLUG + "." + process.env.REPL_OWNER + ".repl.co/api/auth/twitter/callback",
         },
         async (token: string, tokenSecret: string, profile: Profile, done: any) => {
           try {
