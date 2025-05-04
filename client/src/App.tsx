@@ -8,6 +8,7 @@ import NotFound from "@/pages/not-found";
 import LoginPage from "@/pages/LoginPage";
 import FanScorePage from "@/pages/FanScorePage";
 
+
 function Router() {
   const [location] = useLocation();
   const [searchParams] = useSearch(); // Alterado para useSearch do wouter
