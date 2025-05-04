@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import React from "react";
 import FuriaLogo from "@/components/FuriaLogo";
 
 export default function LoginPage() {
   // Handler for Twitter login
   const handleTwitterLogin = () => {
-    window.location.href = "/api/auth/twitter";
+    window.location.href = 'http://localhost:3000/api/auth/twitter';
   };
 
   // Handler for demo login
